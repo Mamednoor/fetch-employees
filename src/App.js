@@ -1,26 +1,44 @@
 import React from 'react';
-import logo from './logo.svg';
+import DisplayEmployee from './components/DisplayEmployee';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const sampleEmployee = {
+  gender: 'male',
+  name: {
+  first: 'Charlie',
+  last: 'Thompson',
+  },
+  location: {
+      street: {
+          number: 761,
+          name: 'Tay Street',
+      },
+      city: 'Timaru',
+      postcode: 76111,
+  },
+  email: 'charlie.thompson@example.com',
+  picture: {
+      medium: 'https://randomuser.me/api/portraits/med/men/40.jpg',
+  },
+};
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      employee: sampleEmployee
+      };
+      }
+
+  render() {
+    return (
+      <div className="App">
+        <DisplayEmployee employee={sampleEmployee} />
+      </div>
+  );}
 }
 
+
 export default App;
+
+
