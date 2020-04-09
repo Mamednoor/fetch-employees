@@ -1,6 +1,7 @@
 import React from "react";
 
 
+
 function DisplayEmployee({ employee }) {
 return (
     <div className="DisplayEmployee">
@@ -23,3 +24,4 @@ return (
 }
 
 export default DisplayEmployee;
+
